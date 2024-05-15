@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:test_riverpod_1/home.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const ProviderScope(child: MyApp()));
 }
+
+final counterProvider = StateProvider((ref) => 0);
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
